@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--创建User类型的对象-->
+    <!--<bean id="user" class="com.itheima.domain.User">-->
+        <!--通过构造方法给属性赋值-->
+        <!--
+            constructor： 构造方法
+            arg:参数
+            index :按照索引赋值
+            type: 按照参数类型赋值
+        -->
+        <!--<constructor-arg index="0" value="1"></constructor-arg>-->
+        <!--<constructor-arg index="1" value="zhangsan"></constructor-arg>-->
+        <!--<constructor-arg type="java.lang.Integer" value="2"></constructor-arg>-->
+        <!--<constructor-arg type="java.lang.String" value="lisi"></constructor-arg>-->
+        <!--<constructor-arg name="id" value="3"></constructor-arg>-->
+        <!--<constructor-arg name="username" value="wangwu"></constructor-arg>-->
+    <!--</bean>-->
+    <!--创建User类型对象- 通过set方法赋值-->
+    <!--<bean id="user" class="com.itheima.domain.User">-->
+        <!--&lt;!&ndash;通过set方法赋值&ndash;&gt;-->
+        <!--<property name="id" value="4"></property>-->
+        <!--<property name="username"  value="马六"></property>-->
+        <!--<property name="birthday" ref="birthday"></property>-->
+    <!--</bean>-->
+
+    <!--创建一个日期对象-->
+    <!--<bean id="birthday" class="java.util.Date"></bean>-->
+    <!-- 需要引入p名称空间: xmlns:p="http://www.springframework.org/schema/p"-->
+    <!-- p:id: 赋值的简单类型-->
+    <!-- p:id-ref: 关联pojo类型-->
+    <!--<bean id="user" class="com.itheima.domain.User" p:id="5" p:username="tianqi" p:birthday-ref="birthday"></bean>-->
+
+    <!--注入集合属性-->
+    <bean id="user" class="com.itheima.domain.User">
+        <!--注入list集合-->
+        <property name="list">
+            <!--指定list集合的元素-->
+            <list>
+                <value>mybatis</value>
+                <value>spring</value>
+                <value>springMVC</value>
+            </list>
+        </property>
+        <!--注入数组类型-->
+        <property name="array">
+            <array>
+                <value>spring Data</value>
+                <value>spring Boot</value>
+                <value>spring Security</value>
+            </array>
+        </property>
+        <!--注入set集合属性-->
+        <property name="set">
+            <set>
+                <value>struts2</value>
+                <value>hibernate</value>
+            </set>
+        </property>
+        <!--注入map集合-->
+        <property name="map">
+
+            <props>
+                <prop key="1">一</prop>
+                <prop key="2">二</prop>
+                <prop key="3">三</prop>
+            </props>
+        </property>
+        <!--注入properties属性-->
+        <property name="properties">
+            <map>
+                <entry key="1" value="一"></entry>
+                <entry key="2" value="二"></entry>
+                <entry key="3" value="三"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>

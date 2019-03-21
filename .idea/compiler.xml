@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="maven_dao_335" />
+        <module name="maven_parent_3335" />
+        <module name="maven_service_335" />
+        <module name="maven_ssm_335" />
+        <module name="maven_web_335" />
+        <module name="spring_day01_2_custom_ioc" />
+        <module name="spring_day01_3_spring_ioc_helloworld" />
+        <module name="spring_day01_5_Dbutils" />
+        <module name="Spring_day03_6_aop_xml" />
+        <module name="springmvc_day01_1_helloworld" />
+        <module name="springmvc_day01_2_config" />
+        <module name="springmvc_day01_3_spingmvc" />
+        <module name="springmvc_day02_10_upload" />
+        <module name="springmvc_day02_1_ann" />
+        <module name="springmvc_day02_2_restful" />
+        <module name="springmvc_day02_3_returnType" />
+        <module name="springmvc_day02_4_json" />
+        <module name="springmvc_day02_5_upload" />
+        <module name="springmvc_day02_6_img_server" />
+        <module name="springmvc_day02_9_exception" />
+        <module name="springmvc_day03_1_ssm" />
+        <module name="springmvc_day03_interceptor" />
+        <module name="SSM" />
+        <module name="ssm_dao" />
+        <module name="ssm_dao_335" />
+        <module name="ssm_domain_335" />
+        <module name="ssm_pages" />
+        <module name="ssm_service_335" />
+        <module name="ssm_utils_335" />
+        <module name="ssm_web_335" />
+        <module name="Test03" />
+        <module name="test1" />
+        <module name="test_lucene_335" />
+        <module name="test_upload" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="maven_dao_335" target="1.8" />
+      <module name="maven_parent_01" target="1.8" />
+      <module name="maven_parent_3335" target="1.8" />
+      <module name="maven_parent_335" target="1.7" />
+      <module name="maven_service_335" target="1.8" />
+      <module name="maven_ssm_335" target="1.7" />
+      <module name="maven_web_335" target="1.7" />
+      <module name="mybatis_custom_frame_335" target="1.5" />
+      <module name="mybatis_day02_1_crud" target="1.8" />
+      <module name="mybatis_day02_2_dao_1" target="1.8" />
+      <module name="mybatis_day02_3_dao_proxy" target="1.5" />
+      <module name="mybatis_day02_4_config" target="1.8" />
+      <module name="mybatis_day02_5_parameterType" target="1.8" />
+      <module name="mybatis_day02_6_resultType" target="1.8" />
+      <module name="mybatis_day03_1_config" target="1.5" />
+      <module name="mybatis_day03_2_dynamicSql" target="1.8" />
+      <module name="mybatis_day03_3_oto" target="1.8" />
+      <module name="mybatis_day03_4_oto" target="1.8" />
+      <module name="mybatis_day03_5_otm" target="1.8" />
+      <module name="mybatis_day03_6_mtm" target="1.8" />
+      <module name="mybatis_day04_1_oto_lazy" target="1.8" />
+      <module name="mybatis_day04_2_otm_lazy" target="1.8" />
+      <module name="mybatis_day04_3_cache_1" target="1.8" />
+      <module name="mybatis_day04_4_cache_2" target="1.8" />
+      <module name="mybatis_day04_5_ann" target="1.8" />
+      <module name="mybatis_day04_6_ann_oto" target="1.8" />
+      <module name="mybatis_day04_7_ann_otm" target="1.8" />
+      <module name="mybatis_day04_8_ann_dynamicSql" target="1.8" />
+      <module name="spring_day01_1_testJDBC" target="1.5" />
+      <module name="spring_day01_2_custom_ioc" target="1.5" />
+      <module name="spring_day01_3_spring_ioc_helloworld" target="1.5" />
+      <module name="spring_day01_4_IOC_DI" target="1.8" />
+      <module name="spring_day01_5_Dbutils" target="1.5" />
+      <module name="spring_day02_1_ioc_xml" target="1.8" />
+      <module name="spring_day02_2_ioc_ann_1" target="1.8" />
+      <module name="spring_day02_3_ioc_xml_ann" target="1.8" />
+      <module name="spring_day02_4_ioc_ann2" target="1.8" />
+      <module name="spring_day03_1_transfer" target="1.8" />
+      <module name="spring_day03_2_proxy" target="1.5" />
+      <module name="spring_day03_3_transfer_proxy" target="1.8" />
+      <module name="spring_day03_4_aop_xml_log" target="1.8" />
+      <module name="spring_day03_5_aop_ann_log" target="1.8" />
+      <module name="spring_day03_6_aop_ann_log" target="1.5" />
+      <module name="spring_day03_8_transfer_proxy" target="1.8" />
+      <module name="spring_day04_1_transfer_aop_xml" target="1.8" />
+      <module name="spring_day04_2_transfer_aop_ann" target="1.8" />
+      <module name="spring_day04_3_jdbcTemplate" target="1.8" />
+      <module name="spring_day04_4_jdbcTemplate_dao" target="1.8" />
+      <module name="spring_day04_5_jdbcTemplate_dao2" target="1.8" />
+      <module name="spring_day04_6_aop_tx_xml" target="1.8" />
+      <module name="spring_day04_7_aop_tx_ann" target="1.5" />
+      <module name="springday03_6_aop_xml" target="1.5" />
+      <module name="springmvc_day01_1_helloworld" target="1.7" />
+      <module name="springmvc_day01_2_config" target="1.7" />
+      <module name="springmvc_day01_3_spingmvc" target="1.8" />
+      <module name="springmvc_day02_10_upload" target="1.7" />
+      <module name="springmvc_day02_11_img_server" target="1.7" />
+      <module name="springmvc_day02_1_ann" target="1.7" />
+      <module name="springmvc_day02_2_restful" target="1.5" />
+      <module name="springmvc_day02_3_returnType" target="1.7" />
+      <module name="springmvc_day02_4_json" target="1.7" />
+      <module name="springmvc_day02_5_upload" target="1.7" />
+      <module name="springmvc_day02_6_img_server" target="1.7" />
+      <module name="springmvc_day02_9_exception" target="1.7" />
+      <module name="springmvc_day03_1_ssm" target="1.7" />
+      <module name="springmvc_day03_interceptor" target="1.7" />
+      <module name="SSM" target="1.5" />
+      <module name="SSM-master" target="1.7" />
+      <module name="ssm_dao" target="1.8" />
+      <module name="ssm_dao_335" target="1.8" />
+      <module name="ssm_domain_335" target="1.8" />
+      <module name="ssm_pages" target="1.7" />
+      <module name="ssm_parent" target="1.8" />
+      <module name="ssm_parent_335" target="1.8" />
+      <module name="ssm_service_335" target="1.8" />
+      <module name="ssm_utils_335" target="1.8" />
+      <module name="ssm_web_335" target="1.7" />
+      <module name="SSMmaster" target="1.7" />
+      <module name="test" target="1.7" />
+      <module name="Test03" target="1.5" />
+      <module name="test1" target="1.5" />
+      <module name="test_jdbc_335" target="1.5" />
+      <module name="test_lucene_335" target="1.8" />
+      <module name="test_mybatis_cutom_frame" target="1.8" />
+      <module name="test_upload" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

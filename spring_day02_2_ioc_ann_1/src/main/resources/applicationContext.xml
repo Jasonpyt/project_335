@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+    ">
+
+    <!--开启注解扫描
+      base-package: 指定某包，扫描包及其子包下的所有的内容
+           只要类上添加：@Component 就会创建对象
+            @Component的子注解
+                @Controller: 在表现层使用
+                @Service: 在业务层使用
+                @Repository:在持久层使用
+        -->
+    <context:component-scan base-package="com.itheima"></context:component-scan>
+
+    <bean id="UserDao" class="com.itheima.dao.impl.UserDaoImpl"></bean>
+</beans>

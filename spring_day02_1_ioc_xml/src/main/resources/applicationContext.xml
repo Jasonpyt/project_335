@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <import resource="classpath:jdbc.xml"></import>
+
+
+    <!--创建Dao的对象，dao需要queryRunner对象，注入queryRunner对象-->
+    <bean id="accountDao" class="com.itheima.dao.impl.AccountDaoImpl">
+        <property name="queryRunner" ref="queryRunner"></property>
+    </bean>
+
+    <!--创建service对象，需要Dao，所以使用依赖注入技术-->
+    <bean id="accountService" class="com.itheima.dao.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+
+</beans>

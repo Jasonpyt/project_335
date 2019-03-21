@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FUSUsageTrigger">
+    <session id="1770326414">
+      <usages-collector id="statistics.spring.core.usages.trigger">
+        <counts>
+          <entry key="fixes.SpringFacetInspection.AddFacetFix" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/maven_parent_01/maven_web_335" />
+    <file type="web" url="file://$PROJECT_DIR$/maven_parent_335/maven_web_335" />
+    <file type="web" url="file://$PROJECT_DIR$/maven_ssm_335" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day01_1_helloworld" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day01_2_config" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day01_3_spingmvc" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_10_upload" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_11_img_server" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_1_ann" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_2_restful" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_3_returnType" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_4_json" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_5_upload" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_6_img_server" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day02_9_exception" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day03_1_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_day03_interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/SSM" />
+    <file type="web" url="file://$PROJECT_DIR$/SSM-master" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_pages" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_parent/ssm_web_335" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_parent_335/ssm_web_335" />
+    <file type="web" url="file://$PROJECT_DIR$/test" />
+    <file type="web" url="file://$PROJECT_DIR$/test_upload" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring_day01_5_Dbutils/pom.xml" />
+        <option value="$PROJECT_DIR$/sspring_day03_6_aop_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/springday03_6_aop_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/test1/pom.xml" />
+        <option value="$PROJECT_DIR$/Test03/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day01_2_config/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day01_1_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day01_3_spingmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_1_ann/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_2_restful/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_3_returnType/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_4_json/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_5_upload/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_6_img_server/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_9_exception/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day03_1_ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day03_interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/test_upload/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_day02_10_upload/pom.xml" />
+        <option value="$PROJECT_DIR$/SSM/pom.xml" />
+        <option value="$PROJECT_DIR$/maven_parent_335/pom.xml" />
+        <option value="$PROJECT_DIR$/maven_parent_01/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_pages/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_parent_335/pom.xml" />
+        <option value="$PROJECT_DIR$/test_lucene_335/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springmvc_day02_11_img_server/SSM-master/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

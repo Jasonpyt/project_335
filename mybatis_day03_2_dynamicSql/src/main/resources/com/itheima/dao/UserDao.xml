@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+<sql id="us">
+    select *from user
+</sql>
+
+    <resultMap id="userList" type="user">
+        <id column="uid" property="id"></id>
+        <result column="uname" property="name"></result>
+    </resultMap>
+
+    <select id="findByParam" resultMap="userList" parameterType="user">
+        <include refid="us"></include> where 1=1
+        <if test="name != null">
+            and uname like "%"#{name}"%"
+        </if>
+        <if test="sex != null">
+            and sex = #{sex}
+        </if>
+    </select>
+
+
+    <!--<select id="findByParam" parameterType="user" resultType="userList">-->
+        <!--<include refid="us"></include>-->
+        <!--<where>-->
+        <!--<if test="uname != null">-->
+            <!--and uname like "%"#{name }"%"-->
+        <!--</if>-->
+            <!--<if test="sex != null" >-->
+                <!--and sex = #{sex}-->
+            <!--</if>-->
+    <!--</where>-->
+    <!--</select>-->
+
+    <delete id="delByIds" parameterType="int[]">
+        delete from user where <foreach collection="array" item="i" separator="," open="uid in(" close=")">
+          #{i}
+    </foreach>
+    </delete>
+
+    <delete id="delByIdsList" parameterType="list">
+        delete from user
+        <foreach collection="list" open="where uid in(" close=")" separator="," item="a">
+            #{a}
+        </foreach>
+    </delete>
+</mapper>

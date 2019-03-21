@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <!--多条件查询-->
+    <select id="findByParam" parameterType="queryvo" resultType="user">
+        select * from user where name like "%"#{user.name}"%" limit #{startIndex},#{pageSize}
+    </select>
+
+    <!--多个参数条件查询
+        参数是多个，参数都是简单类型
+            引用时：param1 ，param2 ， param n
+    -->
+    <select id="findByManyParam" resultType="user">
+        select * from user where name like "%"#{param1}"%" limit #{param2},#{param3}
+    </select>
+</mapper>

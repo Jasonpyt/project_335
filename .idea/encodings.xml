@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/maven_parent_01/maven_web_335" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/maven_ssm_335" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/maven_ssm_335/src/main/resources/com/itheima/dao/UserDao.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/maven_ssm_335/src/main/resources/jdbc.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/maven_ssm_335/src/main/resources/spring/applicationContext-dao.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/maven_ssm_335/src/main/resources/spring/applicationContext-service.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day01_1_helloworld" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day01_2_config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day01_3_spingmvc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_10_upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_10_upload/src/main/webapp/index.jsp" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_11_img_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_11_img_server/src/main/webapp/upload/a" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_1_ann" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_3_returnType" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_4_json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_5_upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_5_upload/src/main/webapp/upload/a" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_6_img_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day02_9_exception" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_1_ssm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_1_ssm/src/main/resources/SqlMapConfig.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_1_ssm/src/main/resources/applicationContext.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_1_ssm/src/main/resources/com/itheima/dao/AccountDao.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_1_ssm/src/main/resources/jdbc.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_1_ssm/src/main/resources/spring-mvc.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_interceptor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_day03_interceptor/src/main/resources/spring-mvc.xml" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/ssm_pages" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm_parent_335/ssm_web_335" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

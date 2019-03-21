@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <!--多条件查询-->
+    <select id="findByParam" parameterType="queryvo" resultType="user">
+        select * from user where name like "%"#{user.name}"%" limit #{startIndex},#{pageSize}
+    </select>
+<!--结果集的映射:属性名与列名不一致的情况下配置-->
+    <!---di是唯一的标志 type最终的类型-->
+    <!---id用来映射主键
+    volumn:列名
+    property:属性名
+    -->
+<resultMap id="userList" type="user">
+    <!--结果集映射-->
+    <id column="uid" property="id"></id>
+</resultMap>
+
+    <select id="findByManyParam" resultMap="userList">
+        select * from user where name like "%"#{param1}"%" limit #{param2},#{param3}
+    </select>
+</mapper>

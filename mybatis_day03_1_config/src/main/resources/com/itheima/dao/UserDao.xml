@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+
+    <resultMap id="userList" type="user">
+        <id column="uid" property="id"></id>
+        <result column="uname" property="name"></result>
+    </resultMap>
+
+    <select id="findAll" resultMap="userList">
+        select * from user
+    </select>
+
+    <delete id="delById" parameterType="int">
+        delete from user where uid = #{aa}
+    </delete>
+</mapper>

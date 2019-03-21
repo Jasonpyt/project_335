@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--包扫描-->
+    <context:component-scan base-package="com.itheima.controller"></context:component-scan>
+    <!--注解驱动-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/pages/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    <!--静态资源放行-->
+    <!--<mvc:resources mapping="/js/**" location="/js/"></mvc:resources>-->
+    <!--<mvc:resources mapping="/fonts/**" location="/fonts/"></mvc:resources>-->
+    <!--<mvc:resources mapping="/css/**" location="/css/"></mvc:resources>-->
+    <!--把控制器作为servlet运行-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+    <!--类型转换器-->
+
+
+
+    <!--文件上传解析器-->
+
+    <!--配置拦截器链-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--拦截的路径-->
+            <mvc:mapping path="/**"/>
+            <!-- 对静态资源放行: 不包含映射-->
+            <mvc:exclude-mapping path="/js/**"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/css/**"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/fonts/**"></mvc:exclude-mapping>
+            <!--指定拦截器类-->
+            <bean class="com.itheima.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

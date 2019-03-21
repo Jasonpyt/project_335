@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--注解包扫描-->
+    <context:component-scan base-package="com.itheima.controller"></context:component-scan>
+    <!--内部资源视图解析器:-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/"></property>
+        <!--后缀-->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--注解驱动加载丰富功能：关联类型转换器工厂-->
+    <mvc:annotation-driven conversion-service="conversionFactory"></mvc:annotation-driven>
+
+    <!--配置类型转换器工厂-->
+    <bean id="conversionFactory" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <!--给set集合属性赋值-->
+            <set>
+                <!--类型转换器添加到set集合中-->
+                <bean class="com.itheima.converter.StringToDateConverter"></bean>
+            </set>
+        </property>
+    </bean>
+</beans>

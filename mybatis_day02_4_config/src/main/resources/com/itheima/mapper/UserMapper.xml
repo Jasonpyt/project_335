@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <!--查询全部-->
+    <select id="findAll" resultType="user">
+        select * from user
+    </select>
+    <!--添加对象
+        参数类型:parameterType
+        #{ 对象的属性名}
+    -->
+    <insert id="save" parameterType="user">
+        -- 主键回显: selectKey
+        --         keyColumn: 主键列名
+        --         keyProperty:主键的属性名
+        --         order：在执行添加语句之前还是之后查询
+        --                mysql中：之后查询
+        --                oracle：之前查询
+        --         resultType：返回值类型
+        --         selectKey标签中的文本：执行的sql语句
+        <selectKey keyColumn="id" keyProperty="id" order="AFTER" resultType="int">
+            select last_insert_id();
+        </selectKey>
+        insert into user values(null,"${name}",#{age},#{sex})
+    </insert>
+    <!--删除操作-->
+    <!--
+        如果输入参数为简单类型(基本数据类型和String类型)
+            #{} 引用时可以随便写
+    -->
+    <delete id="delById" parameterType="int">
+        delete from user where id = #{abc}
+    </delete>
+
+    <!--更新-->
+    <update id="update" parameterType="user">
+        update user set name=#{name} ,age = #{age},sex =#{sex} where id = #{id}
+    </update>
+    <!--根据id查询用户-->
+    <!--
+    parameterType:参数类型
+    resultType:返回值类型
+    -->
+    <select id="findById" parameterType="int" resultType="com.itheima.domain.User">
+        select * from user where id = #{abc}
+    </select>
+    <!--根据姓名模糊查询-->
+    <!--
+        如果 引用时：#{name} , 参数：%张%
+        如果引用时(mysql)："%"#{name}"%": 参数： 张
+        如果引用时(oracle)：'%'||#{name}||'%': 参数： 张
+        如果引用时："%${value}%"， 参数： 张
+    -->
+    <select id="findByName" parameterType="java.lang.String" resultType="com.itheima.domain.User">
+        select * from user where name like "%${value}%"
+    </select>
+
+</mapper>

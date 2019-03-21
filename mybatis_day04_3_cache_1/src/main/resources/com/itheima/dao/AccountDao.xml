@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <!--<resultMap id="accountMap" type="account">-->
+        <!--<id column="id" property="id"></id>-->
+        <!--<result column="accountName" property="accountName"></result>-->
+        <!--<result column="userId" property="userId"></result>-->
+        <!--映射User对象:属性名：user ,对象的类型：User-->
+        <!--<association property="user" javaType="com.itheima.domain.User">-->
+            <!--<id column="uid" property="uid"></id>-->
+            <!--<result column="uname" property="uname"></result>-->
+            <!--<result column="sex" property="sex"></result>-->
+            <!--<result column="age" property="age"></result>-->
+        <!--</association>-->
+    <!--</resultMap>-->
+    <!--<select id="findAll" resultMap="accountMap">-->
+        <!--select * from account a left join user u on a.userId = u.uid-->
+    <!--</select>-->
+
+    <resultMap id="accountMap" type="account">
+        <id column="id" property="id"></id>
+        <result column="accountName" property="accountName"></result>
+        <result column="userId" property="userId"></result>
+        <!--映射User对象:属性名：user ,对象的类型：User-->
+        <!--
+            column:列名, 对应要执行的方法的参数
+            select： mapperId = namespace + id  对应要执行的方法的全名称
+            fetchType: 提取的方式：延迟加载
+                fetch:提取
+                lazy:延迟加载模式
+                eager:立即加载模式
+        -->
+        <!--<association property="user" javaType="com.itheima.domain.User"-->
+                     <!--column="userId" select="com.itheima.dao.AccountDao.findById" fetchType="lazy"></association>-->
+    </resultMap>
+    <select id="findAll" resultMap="accountMap">
+        select * from account
+    </select>
+
+    <select id="findById" parameterType="int" resultType="account">
+        select * from account where id = #{a}
+    </select>
+
+    <insert id="insert" parameterType="account">
+        insert into account values(null, #{accountName}, #{userId})
+    </insert>
+</mapper>

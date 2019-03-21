@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-webmvc-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-jcl-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/jsp-api-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-expression-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-web-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-aop-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/servlet-api-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-core-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-context-5.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_day02_2_restful/target/springmvc_day02_1_ann/WEB-INF/lib/spring-beans-5.0.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

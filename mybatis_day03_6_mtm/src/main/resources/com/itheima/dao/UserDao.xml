@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+
+    <resultMap id="userList" type="user">
+        <id column="uid" property="uid"></id>
+        <result column="uname" property="uname"></result>
+        <result column="age" property="age"></result>
+        <result column="sex" property="sex"></result>
+        <!--映射集合属性：collection-->
+        <collection property="roleList" ofType="role">
+            <id column="id" property="id"></id>
+            <result column="roleName" property="roleName"></result>
+        </collection>
+    </resultMap>
+
+    <!--查询所有的用户，用户包含角色信息-->
+    <select id="findAll" resultMap="userList">
+        select u.*,r.* from user u left join user_role ur on u.uid = ur.uid left join role r on ur.rid = r.id
+    </select>
+</mapper>

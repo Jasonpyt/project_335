@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <!--只要属性名域列名不一致，写结果映射-->
+    <resultMap id="userList" type="user">
+        <id column="uid" property="uid"></id>
+        <result column="uname" property="uname"></result>
+        <result column="age" property="age"></result>
+        <result column="sex" property="sex"></result>
+        <!--映射accountList属性
+            在collection中写的 ofType：关联类型： account
+            如果是用association,collection两个标签做映射，name所有的属性都需要做映射
+        -->
+        <collection property="accountList" ofType="account">
+            <id column="id" property="id"></id>
+            <result column="accountName" property="accountName"></result>
+            <result column="userId" property="userId"></result>
+        </collection>
+    </resultMap>
+    <select id="findAll" resultMap="userList">
+        select * from user u left join account a on u.uid = a.userId
+    </select>
+</mapper>

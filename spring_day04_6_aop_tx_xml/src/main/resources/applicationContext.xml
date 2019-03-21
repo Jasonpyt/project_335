@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--引入属性文件-->
+    <!--<context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>-->
+    <!--引入属性文件-->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties"></property>
+    </bean>
+
+    <!--配置spring自带数据源-->
+    <bean id="springDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.user}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+    <!--创建JdbcTemplate模板对象-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <!--注入数据源对象-->
+        <property name="dataSource" ref="springDataSource"></property>
+    </bean>
+
+    <!--开启注解扫描包-->
+    <context:component-scan base-package="com.itheima"></context:component-scan>
+
+    <!--
+         原理：编程时事务管理
+
+        现在-将来：声明式事务管理
+    -->
+    <!--增强对象:事务管理器-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入dataSource对象: 事务是存在连接对象中的-->
+        <property name="dataSource" ref="springDataSource"></property>
+    </bean>
+    <!--事务管理增强（过滤）：关联事务管理器-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <!--可以配置方法的过滤-->
+        <!--
+                isolation: 隔离级别
+                propagation: 事务的传播行为
+                read-only: 是否只读，查询只读的事务，增删改：非只读事务
+                timeout: -1 代表永不超时
+        -->
+        <tx:attributes>
+            <!--只能过滤一个方法-->
+            <!--<tx:method name="transfer" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" timeout="-1" />-->
+            <!--可以使用通配符方法配置-->
+            <!--<tx:method name="save*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" timeout="-1"></tx:method>-->
+            <!--<tx:method name="update*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" timeout="-1"></tx:method>-->
+            <!--<tx:method name="del*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" timeout="-1"></tx:method>-->
+            <!--<tx:method name="find*" isolation="REPEATABLE_READ" propagation="SUPPORTS" read-only="true" timeout="-1"></tx:method>-->
+            <!--<tx:method name="get*" isolation="REPEATABLE_READ" propagation="SUPPORTS" read-only="true" timeout="-1"></tx:method>-->
+            <!--通配符配置方法-->
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true" ></tx:method>
+            <tx:method name="get*"  propagation="SUPPORTS" read-only="true" ></tx:method>
+            <tx:method name="query*"  propagation="SUPPORTS" read-only="true" ></tx:method>
+            <!--其他的方法都需要事务-->
+            <tx:method name="*" ></tx:method>
+        </tx:attributes>
+    </tx:advice>
+    <!--使用aop配置-->
+    <!--配置切面-->
+    <aop:config>
+        <!--切入点配置-->
+        <!--<aop:pointcut id="pc" expression="execution(* com.itheima.service.impl.*.*(..))"></aop:pointcut>-->
+        <!--织入：通知与切入点关联-->
+        <!--
+            advice-ref: 关联通知对象
+            pointcut-ref: 关联切入点
+        -->
+        <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="pc"></aop:advisor>-->
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.itheima.service.impl.*.*(..))"></aop:advisor>
+    </aop:config>
+</beans>

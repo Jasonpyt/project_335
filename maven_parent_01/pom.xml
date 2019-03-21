@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>maven_dao_335</module>
+        <module>maven_service_335</module>
+        <module>maven_web_335</module>
+    </modules>
+
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--提取版本号-->
+        <spring-version>5.0.2.RELEASE</spring-version>
+        <mybatis-version>3.4.5</mybatis-version>
+        <spring-webmvc.version>5.0.2.RELEASE</spring-webmvc.version>
+    </properties>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>maven_parent_01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+<dependencies>
+    <!--引入orcle依赖-->
+    <dependency>
+        <groupId>com.oracle</groupId>
+        <artifactId>ojdbc14</artifactId>
+        <version>10.2.0.2.0</version>
+    </dependency>
+
+    <!--dao使用mybatis实现需要的jar包-->
+    <!--mybatis的依赖-->
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis-version}</version>
+    </dependency>
+
+    <!--mysql的驱动包-->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.36</version>
+    </dependency>
+
+    <!--mybatis与spring整合需要的jar包-->
+    <!--spring的环境-->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring-version}</version>
+    </dependency>
+
+    <!--mybatis与spring的整合依赖-->
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>1.3.1</version>
+    </dependency>
+    <!--spring数据源依赖-->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring-version}</version>
+    </dependency>
+    <!--c3p0-->
+    <dependency>
+        <groupId>c3p0</groupId>
+        <artifactId>c3p0</artifactId>
+        <version>0.9.1.2</version>
+    </dependency>
+
+    <!--dbcp-->
+    <dependency>
+        <groupId>commons-dbcp</groupId>
+        <artifactId>commons-dbcp</artifactId>
+        <version>1.4</version>
+    </dependency>
+    <!--spring与junit整合依赖-->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>5.0.2.RELEASE</version>
+    </dependency>
+    <!--aop的必要依赖-->
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>1.8.9</version>
+    </dependency>
+    <!--表现层需要的依赖-->
+    <!--springMVC的依赖-->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>5.0.2.RELEASE</version>
+    </dependency>
+    <!--servlet-->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        <scope>provided</scope>
+    </dependency>
+    <!--jsp-->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!--日志开始-->
+    <!-- 日志工具包 -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>2.10.0</version>
+    </dependency>
+
+    <!--日志核心包-->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.10.0</version>
+    </dependency>
+    <!--web相关的功能包-->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-web</artifactId>
+        <version>2.9.1</version>
+    </dependency>
+    <!--为java做简单的日志记录-->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.25</version>
+    </dependency>
+    <!--slf4j的log4j实现类-->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+        <version>2.9.1</version>
+    </dependency>
+    <!--程序运行的时候检测用了哪种日志实现类-->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-jcl</artifactId>
+        <version>2.9.1</version>
+    </dependency>
+
+    <!--日志结束-->
+
+    <!-- JSTL标签库 -->
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+    <dependency>
+        <groupId>taglibs</groupId>
+        <artifactId>standard</artifactId>
+        <version>1.1.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+    </dependency>
+
+</dependencies>
+
+
+    <!-- 上传的位置 -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

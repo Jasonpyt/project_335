@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--dao层需要的配置-->
+    <!--引入jdbc属性文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+    <!--配置数据源:c3p0 ,dbcp,spring jdbc-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.user}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+    <!--创建sessionFactory对象-->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--如果在sqlMapConfig.xml中配置有用的参数，可以引入sqlMapConfig配置文件-->
+        <!--<property name="configLocation" value="classpath:SqlMapConfig.xml"></property>-->
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+        <!--配置别名映射-->
+        <property name="typeAliasesPackage" value="com.itheima.domain"></property>
+        <!--日志的配置: 可以省略-->
+        <property name="configurationProperties">
+            <props>
+                <prop key="logImpl" >STDOUT_LOGGING</prop>
+            </props>
+        </property>
+     </bean>
+    <!--扫描包com.itheima.dao ，创建动态代理对象.放到了spring容器中，根据类型获取-->
+    <bean id="aaa" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.itheima.dao"></property>
+    </bean>
+    <!--dao层需要的配置-->
+
+    <!--service需要的配置-->
+    <!--扫描包，创建业务层对象-->
+    <context:component-scan base-package="com.itheima.service"></context:component-scan>
+    <!--声明式事务管理-->
+    <!--事务管理器对象-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入dataSource对象:事务需要Connection管理-->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--事务增强-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <!--方法的过滤-->
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="query*" propagation="SUPPORTS" read-only="true"/>
+            <!--其他方法都需要事务-->
+            <tx:method name="*"></tx:method>
+        </tx:attributes>
+    </tx:advice>
+    <!--aop配置-->
+    <aop:config>
+        <!--切入点配置-->
+        <aop:pointcut id="pc" expression="execution(* com.itheima.service.impl.*.*(..))"></aop:pointcut>
+        <!--织入-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pc"></aop:advisor>
+    </aop:config>
+    <!--service需要的配置-->
+
+
+</beans>

@@ -1,0 +1,5 @@
+<beans>
+    <bean id="userDao1" class="com.itheima.dao.impl.UserDaoImpl"></bean>
+    <bean id="userDao2" class="com.itheima.dao.impl.UserDaoImpl2"></bean>
+    <bean id="userService" class="com.itheima.dao.impl.UserServiceImpl"></bean>
+</beans>

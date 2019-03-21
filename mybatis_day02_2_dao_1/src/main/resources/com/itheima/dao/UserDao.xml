@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <!--查询全部-->
+    <select id="findAll" resultType="com.itheima.domain.User">
+        select * from user
+    </select>
+    <!--添加对象
+       参数类型:parameterType
+       #{ 对象的属性名}
+   -->
+    <insert id="insert" parameterType="com.itheima.domain.User">
+        -- 主键回显: selectKey
+        --         keyColumn: 主键列名
+        --         keyProperty:主键的属性名
+        --         order：在执行添加语句之前还是之后查询
+        --                mysql中：之后查询
+        --                oracle：之前查询
+        --         resultType：返回值类型
+        --         selectKey标签中的文本：执行的sql语句
+        <selectKey keyColumn="id" keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id();
+        </selectKey>
+        insert into user values(null,"${name}",#{age},#{sex})
+    </insert>
+
+    <!--根据id查询用户-->
+    <!--
+    parameterType:参数类型
+    resultType:返回值类型
+    -->
+    <select id="findById" parameterType="java.lang.Integer" resultType="com.itheima.domain.User">
+        select * from user where id = #{abc}
+    </select>
+</mapper>

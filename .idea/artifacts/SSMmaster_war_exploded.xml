@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SSMmaster:war exploded">
+    <output-path>$PROJECT_DIR$/springmvc_day02_11_img_server/SSM-master/target/SSM-master</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>SSMmaster</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SSMmaster" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/springmvc_day02_11_img_server/SSM-master/target/SSM-master/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="SSMmaster/web/Web" />
+    </root>
+  </artifact>
+</component>
